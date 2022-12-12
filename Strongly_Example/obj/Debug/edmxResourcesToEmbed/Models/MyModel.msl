@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EF_DBModelStoreContainer" CdmEntityContainer="EF_DBEntities">
+    <EntitySetMapping Name="People">
+      <EntityTypeMapping TypeName="EF_DBModel.People">
+        <MappingFragment StoreEntitySet="People">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonCar">
+      <EntityTypeMapping TypeName="EF_DBModel.PersonCar">
+        <MappingFragment StoreEntitySet="PersonCar">
+          <ScalarProperty Name="CarPlak" ColumnName="CarPlak" />
+          <ScalarProperty Name="CarName" ColumnName="CarName" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

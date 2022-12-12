@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EF_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="People">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Website" Type="nvarchar" MaxLength="350" />
+  </EntityType>
+  <EntityType Name="PersonCar">
+    <Key>
+      <PropertyRef Name="PersonID" />
+    </Key>
+    <Property Name="PersonID" Type="int" Nullable="false" />
+    <Property Name="CarName" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="CarPlak" Type="nvarchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_PersonCar_People">
+    <End Role="People" Type="Self.People" Multiplicity="1" />
+    <End Role="PersonCar" Type="Self.PersonCar" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="People">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PersonCar">
+        <PropertyRef Name="PersonID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EF_DBModelStoreContainer">
+    <EntitySet Name="People" EntityType="Self.People" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PersonCar" EntityType="Self.PersonCar" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_PersonCar_People" Association="Self.FK_PersonCar_People">
+      <End Role="People" EntitySet="People" />
+      <End Role="PersonCar" EntitySet="PersonCar" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

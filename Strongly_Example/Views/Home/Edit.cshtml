@@ -1,0 +1,51 @@
+﻿@model Strongly_Example.Models.PersonViewModel
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+<hr />
+<form action="/Home/Edit" method="post">
+    <input class="hidden" name="ID" value="@Model.ID"  />
+    <dl class="dl-horizontal">
+        <dt>
+            Name:
+        </dt>
+        <dd>
+            <input type="text" class="form-control" name="Name" value="@Model.Name" />
+        </dd>
+        <dt>
+            Email:
+        </dt>
+        <dd>
+            <input type="email" class="form-control" name="Email" value="@Model.Email" />
+        </dd>
+        <dt>
+            Website:
+        </dt>
+        <dd>
+            <input type="url" class="form-control" name="Website" value="@Model.Website" />
+        </dd>
+        <dt>
+            Car Name:
+        </dt>
+        <dd>
+            <input type="text" class="form-control" name="CarName" value="@Model.CarName" />
+        </dd>
+        <dt>
+            Car Plak:
+        </dt>
+        <dd>
+            <input type="text" class="form-control" name="CarPlak" value="@Model.CarPlak" />
+        </dd>
+        <dt>
+
+        </dt>
+        <dd>
+            <input type="submit" class="btn btn-warning" value="Edit" />
+        </dd>
+
+    </dl>
+
+</form>
+
